@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.org/noopkat/avrgirl-arduino.svg?branch=master)](https://travis-ci.org/noopkat/avrgirl-arduino) [![Coverage Status](https://coveralls.io/repos/noopkat/avrgirl-arduino/badge.svg?branch=master&service=github)](https://coveralls.io/github/noopkat/avrgirl-arduino?branch=master)
 
+# Fork-specific changes
+
++ `node-serialport` replaced with `browser-serialport` to run within Chrome Apps sandbox
++ Firmware file reading replaced with grabbing it from HTTP
+
 # avrgirl-arduino
 
 A NodeJS library for flashing compiled sketch files to Arduino microcontroller boards.
@@ -73,7 +78,7 @@ avrgirl.flash('Blink.cpp.hex', function (error) {
 
 ```
 
-When creating `new Avrgirl()`, only the `board` property is required. The board names to use are detailed in the table below: 
+When creating `new Avrgirl()`, only the `board` property is required. The board names to use are detailed in the table below:
 
 |Programmer|Board Option String|
 |:----------|:--------------|
@@ -190,7 +195,7 @@ A .hex file is the compiled end result of an Arduino sketch file. I have provide
 
 The most common way to compile a sketch for your Arduino of choice is to download and install the [Arduino IDE](https://www.arduino.cc/en/Main/Software). Ensure you install version 1.6.5 or greater for the following steps.
 
-1. Open the sketch file you'd like to export, or write a new one if you need to. 
+1. Open the sketch file you'd like to export, or write a new one if you need to.
 2. Choose the correct target Arduino board you want to compile the hex file for, from the Tools -> Board menu.
 3. Export your hex file by navigating to Sketch -> Export compiled binary
 ![screenshot of the Sketch menu in Arduino IDE with Export compiled binary menu item highlighted in blue](http://f.cl.ly/items/0r1A082H3U3G0U2z1Z40/export_bin.png)
